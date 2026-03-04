@@ -366,18 +366,7 @@ body {
 }
 
 /* REVEAL */
-.reveal {
-  opacity: 1;
-  transform: translateY(0);
-  transition: opacity 0.75s ease, transform 0.75s ease;
-}
-.js-ready .reveal {
-  opacity: 0;
-  transform: translateY(22px);
-}
-.js-ready .revealed {
-  opacity: 1;
-  transform: translateY(0);
+.reveal { opacity: 1; }
 }
 </style>
 </head>
@@ -527,13 +516,6 @@ body {
 
 </div>
 <script>
-  // Включаем анимацию только если JS работает
-  document.body.classList.add('js-ready');
-  const io = new IntersectionObserver(entries => {
-    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('revealed'); io.unobserve(e.target); } });
-  }, { threshold: 0.08 });
-  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
-
   const track = document.getElementById('carousel');
   const dots = document.querySelectorAll('.cdot');
   track.addEventListener('scroll', () => {
@@ -544,7 +526,6 @@ body {
     const i = +d.dataset.i;
     track.scrollTo({ left: track.children[i].offsetLeft - 20, behavior: 'smooth' });
   }));
-
   document.getElementById('rsvpForm').addEventListener('submit', function(e) {
     e.preventDefault();
     this.style.display = 'none';
