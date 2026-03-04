@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Рустем & Юлия — 20.06.2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Marck+Script&family=Great+Vibes&family=Tenor+Sans&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --cream: #f5f0e8;
+  --warm-white: #faf7f2;
+  --text: #3a2e26;
+  --text-light: #6b5a4e;
+  --accent: #BF914A;
+  --border: #d4c5b0;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background-color: var(--cream);
+  font-family: 'Tenor Sans', sans-serif;
+  color: var(--text);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card {
+  width: 100%;
+  max-width: 430px;
+  background: var(--warm-white);
+  position: relative;
+}
+
+/* SCRIPT HEADINGS — Marck Script поддерживает кириллицу */
+.script-h {
+  font-family: 'Marck Script', cursive;
+  font-size: 44px;
+  color: var(--text);
+  line-height: 1.1;
+  margin-bottom: 4px;
+}
+.script-sub {
+  font-family: 'Tenor Sans', sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-light);
+  margin-bottom: 28px;
+}
+.divider {
+  width: 56px;
+  height: 1px;
+  background: var(--border);
+  margin: 0 auto 28px;
+}
+
+/* HERO */
+.hero {
+  position: relative;
+  height: 420px;
+  background: linear-gradient(155deg, #8a7f72 0%, #b0a494 45%, #cec5b8 100%);
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+}
+.hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, transparent 40%, rgba(0,0,0,0.28) 100%);
+}
+.hero-text {
+  position: relative;
+  z-index: 2;
+  padding: 0 30px 38px;
+  color: rgba(255,255,255,0.93);
+  font-family: 'Great Vibes', cursive;
+  font-size: 30px;
+  line-height: 1.45;
+  text-shadow: 0 1px 10px rgba(0,0,0,0.22);
+}
+
+/* SVG torn edges */
+.tear { display: block; width: 100%; }
+
+/* DEAR */
+.dear {
+  text-align: center;
+  padding: 48px 34px 44px;
+  background: var(--warm-white);
+}
+.dear p {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 16px;
+  line-height: 1.85;
+  color: var(--text-light);
+  margin-bottom: 22px;
+}
+.date-big {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 21px;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  color: var(--text);
+}
+
+/* VENUE */
+.venue {
+  background: #3a2e26;
+  color: #f5f0e8;
+  text-align: center;
+  padding: 46px 34px;
+}
+.venue p {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 15px;
+  line-height: 2;
+  opacity: 0.9;
+  margin-bottom: 26px;
+}
+.btn-light {
+  display: inline-block;
+  border: 1px solid rgba(245,240,232,0.5);
+  color: #f5f0e8;
+  padding: 11px 34px;
+  font-family: 'Tenor Sans', sans-serif;
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  text-decoration: none;
+  background: transparent;
+  transition: background 0.3s;
+}
+.btn-light:hover { background: rgba(255,255,255,0.08); }
+
+/* TIMELINE */
+.timeline {
+  padding: 48px 34px;
+  text-align: center;
+  background: var(--warm-white);
+}
+.tl-item {
+  display: flex;
+  align-items: baseline;
+  gap: 22px;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--border);
+  text-align: left;
+}
+.tl-item:last-child { border-bottom: none; }
+.tl-time {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 28px;
+  color: var(--text);
+  min-width: 78px;
+  flex-shrink: 0;
+}
+.tl-label {
+  font-family: 'Tenor Sans', sans-serif;
+  font-size: 12px;
+  color: var(--text-light);
+  line-height: 1.5;
+}
+
+/* DRESS CODE */
+.dresscode {
+  text-align: center;
+  padding: 46px 34px;
+  background: var(--cream);
+}
+.dresscode p {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 15px;
+  line-height: 1.85;
+  color: var(--text-light);
+  margin-bottom: 28px;
+}
+.palette {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+}
+.dot {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.13);
+  flex-shrink: 0;
+}
+
+/* CAROUSEL */
+.carousel-wrap { background: var(--cream); }
+.carousel-track {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  gap: 8px;
+  padding: 0 20px;
+}
+.carousel-track::-webkit-scrollbar { display: none; }
+.carousel-slide {
+  min-width: calc(80% - 8px);
+  height: 290px;
+  scroll-snap-align: start;
+  background: #d4c5b0;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  color: #a89880;
+}
+.carousel-slide span {
+  font-family: 'Tenor Sans', sans-serif;
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  opacity: 0.65;
+}
+.cdots {
+  display: flex;
+  justify-content: center;
+  gap: 7px;
+  padding: 14px 0 18px;
+}
+.cdot {
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--border);
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.cdot.on { background: var(--text-light); }
+
+/* WISHES */
+.wishes {
+  padding: 48px 34px;
+  text-align: center;
+  background: var(--warm-white);
+}
+.wish { text-align: left; margin-bottom: 22px; }
+.wish-n {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 12px;
+  color: var(--text-light);
+  margin-bottom: 5px;
+}
+.wish-t {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 15px;
+  line-height: 1.85;
+  color: var(--text-light);
+}
+
+/* SURVEY */
+.survey {
+  padding: 48px 34px;
+  background: var(--cream);
+}
+.survey-intro {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 15px;
+  line-height: 1.85;
+  color: var(--text-light);
+  margin-bottom: 30px;
+  text-align: center;
+}
+.field { margin-bottom: 22px; }
+.flabel {
+  display: block;
+  font-family: 'Tenor Sans', sans-serif;
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-light);
+  margin-bottom: 8px;
+}
+.finput {
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid var(--border);
+  background: transparent;
+  padding: 8px 0;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 17px;
+  color: var(--text);
+  outline: none;
+  transition: border-color 0.2s;
+}
+.finput:focus { border-color: var(--text-light); }
+.finput::placeholder { color: #c4b8ae; font-style: italic; }
+.rgroup { display: flex; flex-direction: column; gap: 11px; }
+.rlabel {
+  display: flex; align-items: center; gap: 11px;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 17px;
+  color: var(--text-light);
+  cursor: pointer;
+}
+.rlabel input[type="radio"] {
+  appearance: none; -webkit-appearance: none;
+  width: 17px; height: 17px;
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  cursor: pointer;
+  flex-shrink: 0;
+  background: white;
+  transition: border-color 0.2s;
+}
+.rlabel input[type="radio"]:checked {
+  border-color: var(--text);
+  background: radial-gradient(circle, var(--text) 38%, white 43%);
+}
+.sbtn {
+  width: 100%;
+  border: 1px solid var(--border);
+  background: transparent;
+  padding: 14px;
+  font-family: 'Tenor Sans', sans-serif;
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--text);
+  cursor: pointer;
+  margin-top: 6px;
+  transition: background 0.3s;
+}
+.sbtn:hover { background: rgba(58,46,38,0.06); }
+.thanks {
+  display: none;
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 17px;
+  color: var(--text-light);
+  text-align: center;
+  padding: 20px 0;
+}
+
+/* FOOTER */
+.footer {
+  padding: 60px 34px 70px;
+  text-align: center;
+  background: var(--warm-white);
+}
+.footer-names {
+  font-family: 'Marck Script', cursive;
+  font-size: 54px;
+  color: var(--text);
+  line-height: 1.15;
+  margin-bottom: 14px;
+}
+.footer-amp { color: var(--accent); }
+.footer-date {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 15px;
+  letter-spacing: 0.18em;
+  color: var(--text-light);
+}
+
+/* REVEAL */
+.reveal {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.75s ease, transform 0.75s ease;
+}
+.js-ready .reveal {
+  opacity: 0;
+  transform: translateY(22px);
+}
+.js-ready .revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+</style>
+</head>
+<body>
+<div class="card">
+
+  <!-- HERO -->
+  <div class="hero reveal">
+    <div class="hero-text">
+      you are my today<br>and all of my<br>tomorrows
+    </div>
+  </div>
+
+  <!-- Torn edge: hero → dear (cream) -->
+  <svg class="tear" height="36" viewBox="0 0 430 36" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <polygon points="0,0 0,36 430,36 430,0 420,18 408,5 396,22 382,8 370,24 356,6 343,20 330,7 317,23 303,9 290,26 276,4 263,19 250,8 237,22 223,5 210,20 197,8 183,24 170,10 157,26 143,4 130,18 116,6 103,22 89,8 76,24 62,5 49,20 35,7 22,23 10,9" fill="#faf7f2"/>
+  </svg>
+
+  <!-- DEAR -->
+  <div class="dear reveal">
+    <div class="script-h">Дорогие</div>
+    <div class="script-sub">родные и близкие!</div>
+    <p>С огромной радостью и большой любовью приглашаем вас разделить с нами трогательный и важный момент нашей жизни.</p>
+    <div class="date-big">20.06.2026</div>
+  </div>
+
+  <!-- Torn edge: dear (cream) → venue (dark) -->
+  <svg class="tear" height="36" viewBox="0 0 430 36" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <rect width="430" height="36" fill="#3a2e26"/>
+    <polygon points="0,0 0,36 430,36 430,0 420,18 408,5 396,22 382,8 370,24 356,6 343,20 330,7 317,23 303,9 290,26 276,4 263,19 250,8 237,22 223,5 210,20 197,8 183,24 170,10 157,26 143,4 130,18 116,6 103,22 89,8 76,24 62,5 49,20 35,7 22,23 10,9" fill="#faf7f2"/>
+  </svg>
+
+  <!-- VENUE -->
+  <div class="venue reveal">
+    <p>Будем рады видеть вас на нашей свадьбе<br>в ресторане «№ 23»<br>по адресу: ул. Ульянова-Ленина, 67/2</p>
+    <a class="btn-light" href="https://yandex.ru/maps/org/restoran_23/1824679074?si=y6jqzgbbnznv504cxmcy3feph0" target="_blank" rel="noopener">Открыть карту</a>
+  </div>
+
+  <!-- Torn edge: venue (dark) → timeline (cream) -->
+  <svg class="tear" height="36" viewBox="0 0 430 36" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <rect width="430" height="36" fill="#faf7f2"/>
+    <polygon points="0,0 0,36 430,36 430,0 420,18 408,5 396,22 382,8 370,24 356,6 343,20 330,7 317,23 303,9 290,26 276,4 263,19 250,8 237,22 223,5 210,20 197,8 183,24 170,10 157,26 143,4 130,18 116,6 103,22 89,8 76,24 62,5 49,20 35,7 22,23 10,9" fill="#3a2e26"/>
+  </svg>
+
+  <!-- TIMELINE -->
+  <div class="timeline reveal">
+    <div class="script-h">Тайминг</div>
+    <div class="script-sub">свадебного дня</div>
+    <div class="tl-item"><div class="tl-time">13:45</div><div class="tl-label">сбор гостей в загсе</div></div>
+    <div class="tl-item"><div class="tl-time">14:15</div><div class="tl-label">церемония регистрации</div></div>
+    <div class="tl-item"><div class="tl-time">16:30</div><div class="tl-label">сбор гостей в ресторане</div></div>
+    <div class="tl-item"><div class="tl-time">17:00</div><div class="tl-label">свадебный банкет</div></div>
+    <div class="tl-item"><div class="tl-time">22:00</div><div class="tl-label">завершение вечера</div></div>
+  </div>
+
+  <!-- DRESS CODE -->
+  <div class="dresscode reveal">
+    <div class="script-h">Дресс-код</div>
+    <div class="script-sub" style="margin-bottom:20px;"></div>
+    <div class="divider"></div>
+    <p>Мы будем рады, если своими образами<br>вы поддержите атмосферу праздника.</p>
+    <div class="palette">
+      <div class="dot" style="background:#ac7674;"></div>
+      <div class="dot" style="background:#eae2d7; border:1px solid #d4c5b0;"></div>
+      <div class="dot" style="background:#c2af96;"></div>
+      <div class="dot" style="background:#412F26;"></div>
+      <div class="dot" style="background:#BF914A;"></div>
+    </div>
+  </div>
+
+  <!-- CAROUSEL -->
+  <div class="carousel-wrap reveal">
+    <div class="carousel-track" id="carousel">
+      <div class="carousel-slide">
+        <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#a89880" stroke-width="1.3"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+        <span>фото скоро</span>
+      </div>
+      <div class="carousel-slide">
+        <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#a89880" stroke-width="1.3"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+        <span>фото скоро</span>
+      </div>
+      <div class="carousel-slide">
+        <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#a89880" stroke-width="1.3"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+        <span>фото скоро</span>
+      </div>
+    </div>
+    <div class="cdots">
+      <div class="cdot on" data-i="0"></div>
+      <div class="cdot" data-i="1"></div>
+      <div class="cdot" data-i="2"></div>
+    </div>
+  </div>
+
+  <!-- WISHES -->
+  <div class="wishes reveal">
+    <div class="script-h">Пожелания</div>
+    <div class="script-sub" style="margin-bottom:20px;"></div>
+    <div class="divider"></div>
+    <div class="wish">
+      <div class="wish-n">(1)</div>
+      <div class="wish-t">Главное для нас — ваше внимание, а радость доставит любой подарок в конверте.</div>
+    </div>
+    <div class="wish">
+      <div class="wish-n">(2)</div>
+      <div class="wish-t">Нам хотелось бы сделать этот день добрым, уютным и семейным, поэтому просим вас воздержаться от криков «Горько!».</div>
+    </div>
+  </div>
+
+  <!-- SURVEY -->
+  <div class="survey reveal">
+    <div class="script-h" style="text-align:center;">Анкета</div>
+    <div class="script-sub" style="text-align:center; margin-bottom:20px;"></div>
+    <div class="divider"></div>
+    <p class="survey-intro">Ваши ответы на вопросы помогут нам при организации торжества. Будем ждать ответ до 15.05.26</p>
+    <form id="rsvpForm">
+      <div class="field">
+        <input class="finput" type="text" placeholder="Имя и Фамилия" name="name" required>
+      </div>
+      <div class="field">
+        <div class="flabel">Планируете ли вы присутствовать?</div>
+        <div class="rgroup">
+          <label class="rlabel"><input type="radio" name="attending" value="yes"> Да</label>
+          <label class="rlabel"><input type="radio" name="attending" value="no"> Нет</label>
+        </div>
+      </div>
+      <div class="field">
+        <div class="flabel">Нужен ли вам трансфер?</div>
+        <div class="rgroup">
+          <label class="rlabel"><input type="radio" name="transfer" value="yes"> Да</label>
+          <label class="rlabel"><input type="radio" name="transfer" value="no"> Нет</label>
+        </div>
+      </div>
+      <div class="field">
+        <div class="flabel">Уточните свои предпочтения по напиткам:</div>
+        <input class="finput" type="text" placeholder="ваш ответ" name="drinks">
+      </div>
+      <button type="submit" class="sbtn">Отправить</button>
+    </form>
+    <div class="thanks" id="thanks">Спасибо! Ваши ответы получены 🤍</div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer reveal">
+    <div class="footer-names">Рустем <span class="footer-amp">&amp;</span> Юлия</div>
+    <div class="footer-date">20 · 06 · 2026</div>
+  </div>
+
+</div>
+<script>
+  // Включаем анимацию только если JS работает
+  document.body.classList.add('js-ready');
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('revealed'); io.unobserve(e.target); } });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  const track = document.getElementById('carousel');
+  const dots = document.querySelectorAll('.cdot');
+  track.addEventListener('scroll', () => {
+    const i = Math.round(track.scrollLeft / (track.scrollWidth / track.children.length));
+    dots.forEach((d, idx) => d.classList.toggle('on', idx === i));
+  }, { passive: true });
+  dots.forEach(d => d.addEventListener('click', () => {
+    const i = +d.dataset.i;
+    track.scrollTo({ left: track.children[i].offsetLeft - 20, behavior: 'smooth' });
+  }));
+
+  document.getElementById('rsvpForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    this.style.display = 'none';
+    document.getElementById('thanks').style.display = 'block';
+  });
+</script>
+</body>
+</html>
