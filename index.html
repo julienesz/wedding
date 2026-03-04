@@ -415,16 +415,21 @@ body {
     <polygon points="0,0 0,36 430,36 430,0 420,18 408,5 396,22 382,8 370,24 356,6 343,20 330,7 317,23 303,9 290,26 276,4 263,19 250,8 237,22 223,5 210,20 197,8 183,24 170,10 157,26 143,4 130,18 116,6 103,22 89,8 76,24 62,5 49,20 35,7 22,23 10,9" fill="#3a2e26"/>
   </svg>
 
-  <!-- TIMELINE -->
-  <div class="timeline reveal">
+ <!-- TIMELINE -->
+<div class="timeline reveal" style="position:relative; overflow:hidden;">
+  <svg style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); z-index:0; width:110%; max-width:600px;" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="250" cy="250" r="240" fill="#e8d5d0" opacity="0.5"/>
+  </svg>
+  <div style="position:relative; z-index:1;">
     <div class="script-h">Тайминг</div>
     <div class="script-sub">свадебного дня</div>
     <div class="tl-item"><div class="tl-time">13:45</div><div class="tl-label">сбор гостей в загсе</div></div>
     <div class="tl-item"><div class="tl-time">14:15</div><div class="tl-label">церемония регистрации</div></div>
     <div class="tl-item"><div class="tl-time">16:30</div><div class="tl-label">сбор гостей в ресторане</div></div>
     <div class="tl-item"><div class="tl-time">17:00</div><div class="tl-label">свадебный банкет</div></div>
-    <div class="tl-item"><div class="tl-time">22:00</div><div class="tl-label">завершение вечера</div></div>
+   <div class="tl-item"><div class="tl-time">22:00</div><div class="tl-label">завершение вечера</div></div>
   </div>
+</div>
 
   <!-- DRESS CODE -->
   <div class="dresscode reveal">
@@ -484,7 +489,7 @@ body {
     <div class="script-h" style="text-align:center;">Анкета</div>
     <div class="script-sub" style="text-align:center; margin-bottom:20px;"></div>
     <div class="divider"></div>
-    <p class="survey-intro">Ваши ответы на вопросы помогут нам при организации торжества. Будем ждать ответ до 15.05.26</p>
+    <p class="survey-intro">Ваши ответы на вопросы помогут нам при организации торжества. Будем ждать ответ до 20.05.26</p>
     <form id="rsvpForm">
       <div class="field">
         <input class="finput" type="text" placeholder="Имя и Фамилия" name="name" required>
