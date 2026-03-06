@@ -269,28 +269,38 @@ body {
 }
 .wish-row {
   position: relative;
-  display: flex;
-  align-items: flex-start;
-  gap: 20px;
   padding: 32px 0;
   max-width: 600px;
   margin: 0 auto;
 }
 .wish-row--right {
-  flex-direction: row-reverse;
   text-align: right;
 }
 .wish-num {
+  position: absolute;
   font-family: 'Nuqun', cursive;
   font-size: 110px;
   line-height: 1;
   color: var(--border);
-  opacity: 0.4;
-  flex-shrink: 0;
+  opacity: 0.35;
+  top: 16px;
+  left: 0;
   user-select: none;
+  z-index: 0;
+}
+.wish-row--right .wish-num {
+  left: auto;
+  right: 0;
 }
 .wish-body {
+  position: relative;
+  z-index: 1;
   padding-top: 18px;
+  padding-left: 20px;
+}
+.wish-row--right .wish-body {
+  padding-left: 0;
+  padding-right: 20px;
 }
 .wish-title {
   font-family: 'TT Drugs Trial', sans-serif;
