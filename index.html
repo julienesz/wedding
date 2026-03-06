@@ -71,8 +71,9 @@ body {
 /* HERO */
 .hero {
   position: relative;
-  height: 420px;
-  background: url('photo.webp') center top / cover no-repeat;
+  height: 520px;
+  background: url('photo-mobile.webp') center top / cover no-repeat;
+  background-attachment: scroll;
   display: flex;
   align-items: flex-end;
   overflow: hidden;
@@ -80,8 +81,10 @@ body {
 
 @media (min-width: 768px) {
   .hero {
-    height: 600px;
-    background-position: center 60%;
+    height: 100vh;
+    background-image: url('photo-desktop.jpg');
+    background-position: center center;
+    background-attachment: fixed;
   }
 }
   display: flex;
