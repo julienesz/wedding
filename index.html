@@ -270,11 +270,12 @@ body {
 .wish-row {
   position: relative;
   padding: 32px 0;
-  max-width: 600px;
+  max-width: 500px;
   margin: 0 auto;
 }
 .wish-row--right {
-  text-align: right;
+  margin-left: auto;
+  margin-right: 0;
 }
 .wish-num {
   position: absolute;
@@ -289,20 +290,19 @@ body {
   z-index: 0;
 }
 .wish-row--right .wish-num {
-  left: auto;
-  right: -10px;
+  left: 0;
+  right: auto;
 }
 .wish-body {
   position: relative;
   z-index: 1;
   padding-top: 24px;
-  padding-left: 90px;
+  padding-left: 75px;
   max-width: 380px;
+  text-align: left;
 }
 .wish-row--right .wish-body {
-  padding-left: 90px;
-  padding-right: 0;
-  margin-left: auto;
+  padding-left: 75px;
   text-align: left;
 }
 .wish-title {
@@ -318,7 +318,7 @@ body {
   line-height: 1.85;
   color: var(--text-light);
 }
-
+  
 /* SURVEY */
 .survey {
   padding: 48px 34px;
