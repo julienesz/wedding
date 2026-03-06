@@ -72,6 +72,12 @@ body {
 .hero {
   position: relative;
   height: 420px;
+  @media (min-width: 768px) {
+  .hero {
+    height: 600px;
+    background-position: center 20%;
+  }
+}
   background: url('photo.webp') center center / cover no-repeat;
   display: flex;
   align-items: flex-end;
