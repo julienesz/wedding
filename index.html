@@ -131,32 +131,48 @@ body {
 }
 
 /* VENUE */
+/* VENUE */
 .venue {
-  background: var(--warm-white);
+  position: relative;
+  background: url('restaurant.jpg') center center / cover no-repeat;
   text-align: center;
-  padding: 46px 34px;
+  padding: 100px 34px;
+  color: #f5f0e8;
+}
+.venue::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+}
+.venue > * {
+  position: relative;
+  z-index: 1;
+}
+.venue .script-h {
+  color: #f5f0e8;
 }
 .venue p {
   font-family: 'TT Drugs Trial', sans-serif;
   font-size: 15px;
   line-height: 2;
-  opacity: 0.9;
+  color: rgba(255,255,255,0.85);
   margin-bottom: 26px;
 }
-.btn-light {
+.btn-venue {
   display: inline-block;
-  border: 1px solid rgba(245,240,232,0.5);
+  border: 1px solid rgba(255,255,255,0.7);
   color: #f5f0e8;
-  padding: 11px 34px;
+  padding: 14px 40px;
   font-family: 'TT Drugs Trial', sans-serif;
-  font-size: 10px;
+  font-size: 11px;
   letter-spacing: 0.16em;
   text-transform: uppercase;
   text-decoration: none;
-  background: transparent;
+  background: rgba(255,255,255,0.1);
   transition: background 0.3s;
 }
-.btn-light:hover { background: rgba(255,255,255,0.08); }
+.btn-venue:hover { background: rgba(255,255,255,0.2); }
 
 /* TIMELINE */
 .timeline {
@@ -494,7 +510,7 @@ body {
   <div class="venue reveal">
     <div class="script-h">Где?</div>
     <p>"Ресторан № 23"<br>г. Казань, ул. Ульянова-Ленина, 67/2</p>
-    <a class="btn-light" href="https://yandex.ru/maps/org/restoran_23/1824679074?si=y6jqzgbbnznv504cxmcy3feph0" target="_blank" rel="noopener">Открыть карту</a>
+    <a class="btn-venue" href="https://yandex.ru/maps/org/restoran_23/1824679074?si=y6jqzgbbnznv504cxmcy3feph0" target="_blank" rel="noopener">Открыть карту</a>
   </div>
 
  <!-- TIMELINE -->
