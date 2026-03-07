@@ -402,6 +402,20 @@ body {
   background: white;
   transition: all 0.2s;
 }
+  .rlabel input[type="radio"] {
+  appearance: none; -webkit-appearance: none;
+  width: 16px; height: 16px;
+  border: 1px solid var(--text-light);
+  border-radius: 50%;
+  cursor: pointer;
+  flex-shrink: 0;
+  background: white;
+  transition: all 0.2s;
+}
+.rlabel input[type="radio"]:checked {
+  border-color: var(--text);
+  background: radial-gradient(circle, var(--text) 35%, white 40%);
+}
 .rlabel input[type="checkbox"]:checked {
   border-color: var(--text-light);
   background: white;
