@@ -363,10 +363,11 @@ body {
 .flabel {
   display: block;
   font-family: 'TT Drugs Trial', sans-serif;
-  font-size: 10px;
-  letter-spacing: 0.12em;
+  font-size: 13px;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--text-light);
+  font-weight: 600;
+  color: var(--text);
   margin-bottom: 8px;
 }
 .finput {
@@ -382,36 +383,39 @@ body {
   transition: border-color 0.2s;
 }
 .finput:focus { border-color: var(--text-light); }
-.finput::placeholder { color: #c4b8ae; font-style: italic; }
+.finput::placeholder { color: #c4b8ae; font-style: normal; }
 .rgroup { display: flex; flex-direction: column; gap: 11px; }
 .rlabel {
   display: flex; align-items: center; gap: 11px;
   font-family: 'TT Drugs Trial', sans-serif;
-  font-size: 17px;
+  font-size: 13px;
   color: var(--text-light);
   cursor: pointer;
 }
-.rlabel input[type="radio"] {
+.rlabel input[type="checkbox"] {
   appearance: none; -webkit-appearance: none;
   width: 17px; height: 17px;
   border: 1px solid var(--border);
-  border-radius: 50%;
+  border-radius: 3px;
   cursor: pointer;
   flex-shrink: 0;
   background: white;
   transition: border-color 0.2s;
 }
-.rlabel input[type="radio"]:checked {
+.rlabel input[type="checkbox"]:checked {
   border-color: var(--text);
-  background: radial-gradient(circle, var(--text) 38%, white 43%);
+  background: var(--text);
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 10 8' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 4l3 3 5-6' stroke='white' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
 }
 .sbtn {
   width: 100%;
-  border: 1px solid var(--border);
-  background: transparent;
+  border: none;
+  background: #FFB7C5;
   padding: 14px;
   font-family: 'TT Drugs Trial', sans-serif;
-  font-size: 10px;
+  font-size: 11px;
   letter-spacing: 0.16em;
   text-transform: uppercase;
   color: var(--text);
@@ -419,7 +423,8 @@ body {
   margin-top: 6px;
   transition: background 0.3s;
 }
-.sbtn:hover { background: rgba(58,46,38,0.06); }
+.sbtn:hover { background: #f0a0b5; }
+
 .thanks {
   display: none;
   font-family: 'TT Drugs Trial', sans-serif;
@@ -564,10 +569,15 @@ body {
         </div>
       </div>
       <div class="field">
-        <div class="flabel">Уточните свои предпочтения по напиткам:</div>
+        <div class="flabel">Уточните ваши предпочтения по напиткам:</div>
         <div class="rgroup">
-          <label class="rlabel"><input type="radio" name="transfer" value="yes"> Да</label>
-          <label class="rlabel"><input type="radio" name="transfer" value="no"> Нет</label>
+          <label class="rlabel"><input type="checkbox" name="drinks" value="red"> Красное вино</label>
+          <label class="rlabel"><input type="checkbox" name="drinks" value="white"> Белое вино</label>
+          <label class="rlabel"><input type="checkbox" name="drinks" value="white"> Розовое вино</label>
+          <label class="rlabel"><input type="checkbox" name="drinks" value="champagne"> Шампанское</label>
+          <label class="rlabel"><input type="checkbox" name="drinks" value="whisky"> Виски</label>
+          <label class="rlabel"><input type="checkbox" name="drinks" value="cognac"> Коньяк</label>
+          <label class="rlabel"><input type="checkbox" name="drinks" value="soft"> Безалкогольные напитки</label>
         </div>
       </div>
       <div class="field">
