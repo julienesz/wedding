@@ -518,6 +518,39 @@ body {
 
 /* REVEAL */
 .reveal { opacity: 1; }
+  .toast {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: var(--warm-white);
+  border: 1px solid var(--border);
+  padding: 40px 50px;
+  text-align: center;
+  z-index: 1000;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.15);
+}
+.toast-title {
+  font-family: 'Nuqun', cursive;
+  font-size: 32px;
+  color: var(--text);
+  margin-bottom: 12px;
+  text-transform: uppercase;
+}
+.toast-text {
+  font-family: 'TT Drugs Trial', sans-serif;
+  font-size: 14px;
+  color: var(--text-light);
+  line-height: 1.7;
+}
+.toast-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+  z-index: 999;
+}
 </style>
 </head>
 <body>
@@ -657,7 +690,13 @@ body {
     </form>
     <div class="thanks" id="thanks">Спасибо за ответ!</div>
   </div>
-
+    
+<div class="toast-overlay" id="toastOverlay"></div>
+<div class="toast" id="toast">
+  <div class="toast-title">Спасибо!</div>
+  <div class="toast-text">Ваш ответ получен.<br>Ждём вас на нашем празднике!</div>
+</div>
+    
   <!-- FOOTER -->
   <div class="footer reveal">
     <div class="footer-names">Рустем <span class="footer-amp">&amp;</span> Юлия</div>
@@ -697,7 +736,12 @@ body {
     });
     if (response.ok) {
       this.style.display = 'none';
-      document.getElementById('thanks').style.display = 'block';
+      document.getElementById('toast').style.display = 'block';
+      document.getElementById('toastOverlay').style.display = 'block';
+      setTimeout(() => {
+        document.getElementById('toast').style.display = 'none';
+        document.getElementById('toastOverlay').style.display = 'none';
+      }, 3000);
     }
   });
 </script>
