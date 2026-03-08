@@ -73,21 +73,13 @@ body {
 /* HERO */
 .hero {
   position: relative;
-  height: 520px;
-  background: url('photo-mobile.webp') center top / cover no-repeat;
-  background-attachment: scroll;
+  height: 100vh;
+  background: url('photo-desktop.jpg') center center / cover no-repeat;
+  background-attachment: fixed;
   display: flex;
-  align-items: flex-end;
+  align-items: flex-start;
+  justify-content: flex-end;
   overflow: hidden;
-}
-
-@media (min-width: 768px) {
-  .hero {
-    height: 100vh;
-    background-image: url('photo-desktop.jpg');
-    background-position: center center;
-    background-attachment: fixed;
-  }
 }
   display: flex;
   align-items: flex-end;
@@ -102,12 +94,13 @@ body {
 .hero-text {
   position: relative;
   z-index: 2;
-  padding: 0 30px 50px;
+  padding: 60px 50px 0 0;
   color: rgba(255,255,255,0.95);
   font-family: 'Nuqun', cursive;
   font-size: 52px;
   line-height: 1.2;
   letter-spacing: 0.04em;
+  text-align: right;
   text-shadow: 0 2px 20px rgba(0,0,0,0.3);
 }
   
