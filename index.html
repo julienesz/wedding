@@ -107,6 +107,7 @@ body {
   text-align: left;
   text-shadow: 0 2px 20px rgba(0,0,0,0.3);
   margin-bottom: 15vh;
+  transition: opacity 0.3s ease;
 }
   
 /* DEAR */
@@ -689,11 +690,10 @@ body {
     this.style.display = 'none';
     document.getElementById('thanks').style.display = 'block';
   });
-  });
 
   window.addEventListener('scroll', () => {
     const heroText = document.querySelector('.hero-text');
-    if (window.scrollY > window.innerHeight) {
+    if (window.scrollY > window.innerHeight * 0.9) {
       heroText.style.opacity = '0';
       heroText.style.pointerEvents = 'none';
     } else {
@@ -701,8 +701,6 @@ body {
       heroText.style.pointerEvents = 'auto';
     }
   });
-
-</script>
 </script>
 </body>
 </html>
