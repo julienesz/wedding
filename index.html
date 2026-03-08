@@ -92,7 +92,11 @@ body {
   background: linear-gradient(to bottom, transparent 40%, rgba(0,0,0,0.28) 100%);
 }
 .hero-text {
-  position: relative;
+  position: fixed;
+  top: 50%;
+  right: 50px;
+  transform: translateY(-50%);
+  z-index: 2;
   z-index: 2;
   padding: 0 50px 0 0;
   color: rgba(255,255,255,0.95);
@@ -503,6 +507,7 @@ body {
   .hero {
     align-items: flex-start;
     justify-content: center;
+    background-attachment: scroll;
   }
   .hero-text {
     padding: 50px 20px 0 20px;
@@ -684,6 +689,20 @@ body {
     this.style.display = 'none';
     document.getElementById('thanks').style.display = 'block';
   });
+  });
+
+  window.addEventListener('scroll', () => {
+    const heroText = document.querySelector('.hero-text');
+    if (window.scrollY > window.innerHeight) {
+      heroText.style.opacity = '0';
+      heroText.style.pointerEvents = 'none';
+    } else {
+      heroText.style.opacity = '1';
+      heroText.style.pointerEvents = 'auto';
+    }
+  });
+
+</script>
 </script>
 </body>
 </html>
