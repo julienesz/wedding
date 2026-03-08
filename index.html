@@ -102,6 +102,7 @@ body {
   letter-spacing: 0.04em;
   text-align: left;
   text-shadow: 0 2px 20px rgba(0,0,0,0.3);
+  margin-bottom: 15vh;
 }
   
 /* DEAR */
@@ -495,6 +496,21 @@ body {
   .carousel-slide {
     min-width: 500px;
     height: 480px;
+  }
+}
+
+  @media (max-width: 767px) {
+  .hero {
+    align-items: flex-start;
+    justify-content: center;
+  }
+  .hero-text {
+    padding: 50px 20px 0 20px;
+    text-align: center;
+    margin-bottom: 0;
+  }
+  .hero-text div[style] {
+    padding-left: 0 !important;
   }
 }
 
