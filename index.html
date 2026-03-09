@@ -229,7 +229,7 @@ body {
 
 /* CAROUSEL */
 .carousel-wrap {
-  background: var(--cream);
+  background: var(--warm-white);
   padding: 0 40px;
 }
 .carousel-track {
@@ -280,21 +280,21 @@ body {
   top: 50%;
   transform: translateY(-50%);
   z-index: 10;
-  background: var(--text);
+  background: #FFB7C5;
   border: none;
   width: 44px;
   height: 44px;
   border-radius: 50%;
   font-size: 18px;
   cursor: pointer;
-  color: #faf7f2;
+  color: var(--text);
   box-shadow: 0 2px 8px rgba(0,0,0,0.2);
   transition: background 0.2s;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.carr-btn:hover { background: var(--text-light); }
+.carr-btn:hover { background: #f0a0b5; }
 .carr-btn--left { left: -22px; }
 .carr-btn--right { right: -22px; }
 
@@ -528,7 +528,7 @@ body {
   @media (max-width: 767px) {
   .crane {
     width: 150px;
-    right: -30px;
+    right: -60px;
     top: -50px;
     opacity: 0.3;
   }
@@ -734,11 +734,17 @@ body {
   const dots = document.querySelectorAll('.cdot');
   const slideWidth = 268;
 
+  const slides = track.querySelectorAll('.carousel-slide');
+  const total = slides.length;
+  let current = 0;
+
   document.getElementById('prevBtn').addEventListener('click', () => {
-    track.scrollBy({ left: -slideWidth, behavior: 'smooth' });
+    current = (current - 1 + total) % total;
+    track.scrollTo({ left: current * slideWidth, behavior: 'smooth' });
   });
   document.getElementById('nextBtn').addEventListener('click', () => {
-    track.scrollBy({ left: slideWidth, behavior: 'smooth' });
+    current = (current + 1) % total;
+    track.scrollTo({ left: current * slideWidth, behavior: 'smooth' });
   });
 
   track.addEventListener('scroll', () => {
