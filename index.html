@@ -471,6 +471,14 @@ body {
   text-align: center;
   background: var(--warm-white);
 }
+.crane {
+  position: absolute;
+  right: -90px;
+  top: -130px;
+  width: 280px;
+  opacity: 0.35;
+  pointer-events: none;
+}
 .footer-names {
   font-family: 'Nuqun', cursive;
   font-size: 32px;
@@ -519,10 +527,10 @@ body {
 
   @media (max-width: 767px) {
   .crane {
-    width: 120px !important;
-    right: 0px !important;
-    top: -60px !important;
-    opacity: 0.3 !important;
+    width: 120px;
+    right: 0px;
+    top: -60px;
+    opacity: 0.3;
   }
 }
 
@@ -713,16 +721,9 @@ body {
 </div>
 
     
-  <!-- FOOTER -->
+ <!-- FOOTER -->
   <div class="footer reveal" style="position:relative;">
-  <img src="crane.png" class="crane" style="
-    position:absolute;
-    right: -90px;
-    top: -130px;
-    width: 280px;
-    opacity: 0.35;
-    pointer-events: none;
-  ">
+  <img src="crane.png" class="crane">
     <div class="footer-names">До встречи на нашем празднике!</div>
   <div class="footer-date">20 · 06 · 2026</div>
 </div>
