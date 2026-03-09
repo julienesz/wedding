@@ -481,7 +481,7 @@ body {
 .footer-amp { color: var(--accent); }
 .footer-date {
   font-family: 'Nuqun', cursive;
-  font-size: 15px;
+  font-size: 20px;
   letter-spacing: 0.18em;
   color: var(--text-light);
 }
@@ -514,6 +514,15 @@ body {
   }
   .hero-text div[style] {
     padding-left: 2em !important;
+  }
+}
+
+  @media (max-width: 767px) {
+  .crane {
+    width: 160px !important;
+    right: -10px !important;
+    top: -60px !important;
+    opacity: 0.2 !important;
   }
 }
 
@@ -706,15 +715,15 @@ body {
     
   <!-- FOOTER -->
   <div class="footer reveal" style="position:relative;">
-  <img src="crane.png" style="
+  <img src="crane.png" class="crane" style="
     position:absolute;
-    right: -80px;
+    right: -90px;
     top: -130px;
     width: 280px;
     opacity: 0.35;
     pointer-events: none;
   ">
-    <div class="footer-names">Рустем <span class="footer-amp">&amp;</span> Юлия</div>
+    <div class="footer-names">До встречи на нашем празднике!</div>
   <div class="footer-date">20 · 06 · 2026</div>
 </div>
 
