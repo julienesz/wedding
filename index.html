@@ -81,10 +81,6 @@ body {
   justify-content: flex-end;
   overflow: hidden;
 }
-  display: flex;
-  align-items: flex-end;
-  overflow: hidden;
-}
 .hero::after {
   content: '';
   position: absolute;
@@ -125,7 +121,7 @@ body {
   font-size: 35px;
   letter-spacing: 0.05em;
   color: var(--text);
-  font-weight: 280;
+  font-weight: 200;
 }
 
 /* VENUE */
@@ -263,20 +259,6 @@ body {
   letter-spacing: 0.1em;
   opacity: 0.65;
 }
-.cdots {
-  display: flex;
-  justify-content: center;
-  gap: 7px;
-  padding: 14px 0 18px;
-}
-.cdot {
-  width: 6px; height: 6px;
-  border-radius: 50%;
-  background: var(--border);
-  cursor: pointer;
-  transition: background 0.2s;
-}
-.cdot.on { background: var(--text-light); }
 .carr-btn {
   position: absolute;
   top: 50%;
@@ -488,7 +470,6 @@ body {
   line-height: 1.15;
   margin-bottom: 14px;
 }
-.footer-amp { color: var(--accent); }
 .footer-date {
   font-family: 'Nuqun', cursive;
   font-size: 20px;
@@ -795,10 +776,6 @@ const revealEls = document.querySelectorAll('.reveal');
       }, 3000);
     }
   });
-</script>
-</body>
-</html>
-
 </script>
 </body>
 </html>
