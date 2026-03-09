@@ -732,35 +732,30 @@ body {
 </div>
 <script>
   const track = document.getElementById('carousel');
-  const dots = document.querySelectorAll('.cdot');
   const slideWidth = 268;
+  const prevBtn = document.getElementById('prevBtn');
+  const nextBtn = document.getElementById('nextBtn');
 
-  const slides = track.querySelectorAll('.carousel-slide');
-  const total = slides.length;
-  let current = 0;
+  function updateButtons() {
+    const atStart = track.scrollLeft <= 10;
+    const atEnd = track.scrollLeft >= track.scrollWidth - track.clientWidth - 10;
+    prevBtn.style.display = atStart ? 'none' : 'flex';
+    nextBtn.style.display = atEnd ? 'none' : 'flex';
+  }
 
-  document.getElementById('prevBtn').addEventListener('click', () => {
-    current = (current - 1 + total) % total;
-    track.scrollTo({ left: current * slideWidth, behavior: 'smooth' });
+  prevBtn.addEventListener('click', () => {
+    track.scrollBy({ left: -slideWidth, behavior: 'smooth' });
   });
-  document.getElementById('nextBtn').addEventListener('click', () => {
-    current = (current + 1) % total;
-    track.scrollTo({ left: current * slideWidth, behavior: 'smooth' });
+  nextBtn.addEventListener('click', () => {
+    track.scrollBy({ left: slideWidth, behavior: 'smooth' });
   });
 
-  track.addEventListener('scroll', () => {
-    const i = Math.round(track.scrollLeft / slideWidth);
-    dots.forEach((d, idx) => d.classList.toggle('on', idx === i));
-  }, { passive: true });
+  track.addEventListener('scroll', updateButtons, { passive: true });
 
-  dots.forEach(d => d.addEventListener('click', () => {
-    const i = +d.dataset.i;
-    track.scrollTo({ left: i * slideWidth, behavior: 'smooth' });
-  }));
+  updateButtons();
 
   document.getElementById('rsvpForm').addEventListener('submit', async function(e) {
     e.preventDefault();
-    const data = new FormData(this);
     const response = { ok: true }; // TEST MODE
     if (response.ok) {
       this.style.display = 'none';
